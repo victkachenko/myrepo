@@ -21,14 +21,14 @@ window.onload = function ()
 	
 	function move()
 	{
-		var e = arguments[0];
+		var event = arguments[0]; // 
 		if(draggable)
 		{
-			draggable.style.left = e.pageX - 10 + 'px';
-			draggable.style.top = e.pageY - 10 + 'px';
+			draggable.style.left = event.pageX - 25 + 'px';
+			draggable.style.top = event.pageY - 25 + 'px';
 		}
 	}
 	myDiv.onmousedown = capture;
 	myDiv.onmouseup = release;
-	body.onmousemove = move;
+	window.onmousemove = move;
 };
