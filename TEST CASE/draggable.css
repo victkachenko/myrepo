@@ -1,0 +1,17 @@
+div
+{
+	border:1px solid black;
+	background:#ff0000;
+	color:yellow;
+	position:absolute;
+	width:60px;
+	height:50px;
+	top:150px;
+	left:150px;
+	text-align:center;
+}
+div:hover
+{
+	background:yellow;
+	color:#ff0000;
+}
