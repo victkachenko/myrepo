@@ -19,9 +19,8 @@ window.onload = function ()
 		draggable = null;
 	}
 	
-	function move()
+	function move(event)
 	{
-		var event = arguments[0]; // 
 		if(draggable)
 		{
 			draggable.style.left = event.pageX - 25 + 'px';
