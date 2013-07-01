@@ -18,6 +18,7 @@ window.onload = function ()
 		{
 			draggable = this;
 		}
+		return false;
 	}	
 	
 	function leftClick()
