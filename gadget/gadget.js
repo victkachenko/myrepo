@@ -20,6 +20,17 @@ window.onload = function ()
 		}
 	}	
 	
+	function leftClick()
+	{
+		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
+	}
+	
+	function rightClick()
+	{
+		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
+		return false;
+	}
+	
 	function release()
 	{
 		draggable = null;
@@ -65,19 +76,11 @@ window.onload = function ()
 			fixFormat(month+1)+br+"Year: "+fixFormat(year);
 		}
 	}
+	
 		// handlers
 	clock.onmousedown = capture;
 	window.onmouseup = release;
 	window.onmousemove = move;
-	
-	clock.onclick = function ()
-	{
-		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
-	}
-	
-	clock.oncontextmenu = function ()
-	{
-		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
-		return false;
-	}
+	clock.oncontextmenu = rightClick;
+	clock.onclick = leftClick;
 }
