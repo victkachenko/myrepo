@@ -1,19 +1,17 @@
 window.onload = function ()
 {
-	
+	// initialize
 	var clocks = setInterval(times,1000),
 		flagLeft = true,
 		flagRight = true,		
 		clock = document.getElementById("clock"),
-		draggable = null;
+		draggable = null,
+		thisDate = new Date();
 		
-	setTimeout(preLoad,1);
-	
-	function preLoad()
+	(function ()
 	{
-		clock.innerHTML = "This Date";
-	}
-	
+		clock.innerHTML = "This Date";  // initial value
+	}());	
 	
 	function capture()
 	{
@@ -32,8 +30,8 @@ window.onload = function ()
 	{
 		if(draggable)
 		{
-			draggable.style.left = event.pageX - 25 + 'px';
-			draggable.style.top = event.pageY - 25 + 'px';
+			draggable.style.left = event.pageX - 25 + "px";
+			draggable.style.top = event.pageY - 25 + "px";
 		}
 	}
 	
@@ -44,27 +42,33 @@ window.onload = function ()
 	
 	function times()
 	{
-		var thisDate = new Date(),
-			day = thisDate.getDate(),
+		var day = thisDate.getDate(),
 			hour = thisDate.getHours(),
 			sec = thisDate.getSeconds(),
 			minutes = thisDate.getMinutes(),
 			year = thisDate.getFullYear(),
-			month = thisDate.getMonth();
+			month = thisDate.getMonth(),
+			br = "<br />"
 		
 		if(!flagLeft)
 		{
-			clock.innerHTML = fixFormat(hour)+":"+fixFormat(minutes);
+			clock.innerHTML = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes);
 		}
 		else if(flagLeft)
 		{
-			clock.innerHTML = fixFormat(hour)+":"+fixFormat(minutes)+":"+fixFormat(sec);
+			clock.innerHTML = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes)+ //
+			br+"Seconds: "+fixFormat(sec);
 		}
 		if(flagRight)
 		{
-			clock.innerHTML = fixFormat(day)+":"+fixFormat(month)+":"+fixFormat(year);
+			clock.innerHTML = "Day: "+fixFormat(day)+br+"Month: "+
+			fixFormat(month+1)+br+"Year: "+fixFormat(year);
 		}
 	}
+		// handlers
+	clock.onmousedown = capture;
+	window.onmouseup = release;
+	window.onmousemove = move;
 	
 	clock.onclick = function ()
 	{
@@ -76,8 +80,4 @@ window.onload = function ()
 		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
 		return false;
 	}
-	
-	clock.onmousedown = capture;
-	window.onmouseup = release;
-	window.onmousemove = move;
 }

@@ -10,12 +10,21 @@ div
 	left:150px;
 	text-align:center;
 	border-radius:5px;
-	float:top;
-	
-	
 }
 div:hover
 {
 	background:yellow;
 	color:#ff0000;
+}
+span
+{
+	position:relative;
+}
+span#first-dot
+{
+	text-decoration:blink;
+}
+span#second-dot
+{
+	text-decoration:blink;
 }
