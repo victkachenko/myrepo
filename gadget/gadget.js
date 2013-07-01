@@ -5,9 +5,8 @@ window.onload = function ()
 		flagLeft = true,
 		flagRight = true,		
 		clock = document.getElementById("clock"),
-		draggable = null,
-		thisDate = new Date();
-		
+		draggable = null;
+
 	(function ()
 	{
 		clock.innerHTML = "This Date";  // initial value
@@ -35,17 +34,6 @@ window.onload = function ()
 		}
 	}
 	
-	function leftClick()
-	{
-		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
-	}
-	
-	function rightClick()
-	{
-		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
-		return false;
-	}
-	
 	function fixFormat(number)
 	{
 		return number < 10 ? "0" + number : number;
@@ -53,7 +41,8 @@ window.onload = function ()
 	
 	function times()
 	{
-		var day = thisDate.getDate(),
+		var thisDate = new Date(),
+			day = thisDate.getDate(),
 			hour = thisDate.getHours(),
 			sec = thisDate.getSeconds(),
 			minutes = thisDate.getMinutes(),
@@ -80,6 +69,15 @@ window.onload = function ()
 	clock.onmousedown = capture;
 	window.onmouseup = release;
 	window.onmousemove = move;
-	clock.onclick = leftClick;
-	clock.oncontextmenu = rightClick;
+	
+	clock.onclick = function ()
+	{
+		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
+	}
+	
+	clock.oncontextmenu = function ()
+	{
+		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
+		return false;
+	}
 }
