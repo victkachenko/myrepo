@@ -35,6 +35,17 @@ window.onload = function ()
 		}
 	}
 	
+	function leftClick()
+	{
+		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
+	}
+	
+	function rightClick()
+	{
+		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
+		return false;
+	}
+	
 	function fixFormat(number)
 	{
 		return number < 10 ? "0" + number : number;
@@ -69,15 +80,6 @@ window.onload = function ()
 	clock.onmousedown = capture;
 	window.onmouseup = release;
 	window.onmousemove = move;
-	
-	clock.onclick = function ()
-	{
-		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
-	}
-	
-	clock.oncontextmenu = function ()
-	{
-		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
-		return false;
-	}
+	clock.onclick = leftClick;
+	clock.oncontextmenu = rightClick;
 }
