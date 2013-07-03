@@ -2,7 +2,7 @@
 //@constructor
 //@this {Calculator]
 
-function Calculator ()
+function Calculator()
 {
 	//@private 
 	var output;
