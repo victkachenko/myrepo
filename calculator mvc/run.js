@@ -1,4 +1,4 @@
-var controller = new Controller();
+var controllerCalc = new ControllerCalc();
 window.onload = function () {
 	controller.init();
 };

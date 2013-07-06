@@ -1,11 +1,11 @@
 function Draggable() {
 	var draggable = null;
 	
-	this.capture = function () {
+	this.capture = function (e) {
 		if(!draggable) {
 			draggable = this;
 		}
-		return false;
+		//e.preventDefault();
 	};
 	
 	this.release = function () {

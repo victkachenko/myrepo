@@ -4,13 +4,37 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="gadget.css">
 	<script src="Timer/timer-model.js"></script>
+	<script src="Calc/calc-model.js"></script>
 	<script src="Draggable/drag-model.js"></script>
 	<script src="Timer/timer-controller.js"></script>
+	<script src="Calc/calc-controller.js"></script>
 	<script src="Draggable/drag-controller.js"></script>
 	<script src="run.js"></script>
 </head>
 <body>
-	<div id="clock">
+<div id="gadget">
+	<div id="clock" class="bord" >
 	</div>
+	<div id="calc" class="bord" >
+	<label for="first-value">
+		Input first value: 
+	</label>
+	
+	<input type="text" id="first-value" /><br />
+	
+	<label for="second-value">
+		Input second value: 
+	</label>
+	
+	<input type="text" id="second-value" /><br />
+	
+	Output value: <input type="text" disabled="disabled" id="output-value" /><br />
+	
+	<input type="button" id="button-plus" value="+" />
+	<input type="button" id="button-minus" value="-" />
+	<input type="button" id="button-multiply" value="*" />
+	<input type="button" id="button-decide" value="/" />
+	</div>
+</div>
 </body>
 </html>

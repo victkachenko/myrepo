@@ -1,6 +1,6 @@
 function ControllerDrag() {
 	this.init = function () {
-		var clock = document.getElementById("clock"),
+		var clock = document.getElementById("gadget"),
 			drag = new Draggable();
 		
 		clock.onmousedown = drag.capture;

@@ -1,19 +1,19 @@
-function Timer(clock)
-{
+function Timer() {
+
 	var flagLeft = true,
-		flagRight = true;
+		flagRight = true,
+		result;
 		
-	function fixFormat(number)
-	{
+	function fixFormat(number) {
 		return number < 10 ? "0" + number : number;
 	}
 	
 	this.leftClick = function () {
-		flagLeft = flagLeft ? (flagleft = false) : (flagLeft = true);				
+		flagLeft = (flagLeft) ? false : true;				
 	};
 	
 	this.rightClick = function () {
-		flagRight = flagRight ? (flagRight = false) : (flagRight = true);
+		flagRight = (flagRight) ? false : true;
 	};
 	
 	this.render = function () {
@@ -24,23 +24,25 @@ function Timer(clock)
 			minutes = thisDate.getMinutes(),
 			year = thisDate.getFullYear(),
 			month = thisDate.getMonth(),
-			br = "<br />"
+			br = "<br />";
 		
-		if(!flagLeft)
-		{
-			clock.innerHTML = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes);
+		if(!flagLeft) {
+			result = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes);
 		}
-		else if(flagLeft)
-		{
-			clock.innerHTML = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes)+ //
-			br+"Seconds: "+fixFormat(sec);
+		else {
+			if(flagLeft) {
+				result = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes)+ //
+				br+"Seconds: "+fixFormat(sec);
+			}
 		}
-		if(flagRight)
-		{
-			clock.innerHTML = "Day: "+fixFormat(day)+br+"Month: "+
+		if(flagRight) {
+			result = "Day: "+fixFormat(day)+br+"Month: "+
 			fixFormat(month+1)+br+"Year: "+fixFormat(year);
 		}
 	};
 	
+	this.getResult = function () {
+		return result;
+	};
 	return this;
 }
