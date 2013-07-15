@@ -25,6 +25,16 @@ function Calculator() {
 	this.decide = function (params) {
 		output = params.first / params.second;
 	};
+	
+	this.toBin = function (string) { 
+		var out = "",
+			bit = 1;
+		while(string >= bit) {
+			out = (string & bit ? 1 : 0 ) + out;
+			bit <<= 1;
+		}
+		output = out || "0";
+	};
 	//@public
 	//@return {Number}
 	this.getResult = function () {

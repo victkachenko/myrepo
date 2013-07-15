@@ -23,19 +23,47 @@ function ControllerCalc() {
 	function result() {
 		out.value = calc.getResult();
 	}
+	function cleaning() {
+		first.value = "";
+		second.value = "";
+		out.value = "";
+	}
 	//@public
 	this.init = function () {
 		//@private
-		var btnPlus = document.getElementById("button-plus"),
+		var buttons = document.getElementsByTagName("button"),
+			btnPlus = document.getElementById("button-plus"),
 			btnMinus = document.getElementById("button-minus"),
 			btnDecide = document.getElementById("button-decide"),
-			btnMultiply = document.getElementById("button-multiply");
+			btnMultiply = document.getElementById("button-multiply"),
+			bin = document.getElementById("bin"),
+			reset = document.getElementById("reset"),
+			length = buttons.length,
+			i;
 			
 		first = document.getElementById("first-value"),
 		out = document.getElementById("output-value"),
 		second = document.getElementById("second-value");
 		
+		for(i = 0; i < length; i += 1) {
+		
+			(function (number) {
+				buttons[number].addEventListener("click", function () {
+					first.value += number;
+				}, false);
+			})(i)
+			
+		}
 		//@event 
+		reset.addEventListener("click", function () {
+			cleaning();
+		}, false);
+		
+		bin.addEventListener("click", function () {
+			calc.toBin(getValues().first);
+			result();
+		}, false);
+		
 		btnPlus.addEventListener("click",function () {
 			calc.add(getValues());
 			result();

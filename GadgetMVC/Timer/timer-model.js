@@ -23,21 +23,18 @@ function Timer() {
 			sec = thisDate.getSeconds(),
 			minutes = thisDate.getMinutes(),
 			year = thisDate.getFullYear(),
-			month = thisDate.getMonth(),
-			br = "<br />";
-		
+			month = thisDate.getMonth();
+					
 		if(!flagLeft) {
-			result = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes);
+			result = fixFormat(hour)+" : "+fixFormat(minutes);
 		}
 		else {
 			if(flagLeft) {
-				result = "Hour: "+fixFormat(hour)+br+"Minutes: "+fixFormat(minutes)+ //
-				br+"Seconds: "+fixFormat(sec);
+				result = fixFormat(hour)+" : "+fixFormat(minutes)+" : "+fixFormat(sec);
 			}
 		}
 		if(flagRight) {
-			result = "Day: "+fixFormat(day)+br+"Month: "+
-			fixFormat(month+1)+br+"Year: "+fixFormat(year);
+			result = fixFormat(day)+"/"+fixFormat(month+1)+"/"+fixFormat(year);
 		}
 	};
 	

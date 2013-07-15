@@ -9,7 +9,7 @@ function ControllerTimer() {
 			clock.innerHTML = timer.getResult();
 		}	
 		
-		clock.innerHTML = "Timer<br /> MVC <br /> Drag";
+		clock.innerHTML = "Timer";
 		
 		clock.addEventListener("click", function (event) {
 			timer.leftClick();
