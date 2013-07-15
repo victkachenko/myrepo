@@ -8,4 +8,4 @@ window.addEventListener("load",function () {
 	controllerDrag.init();
 	controllerCalc.init();
 	
-},false);
+}, false);

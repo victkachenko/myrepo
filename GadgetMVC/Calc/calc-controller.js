@@ -23,6 +23,7 @@ function ControllerCalc() {
 	function result() {
 		out.value = calc.getResult();
 	}
+	
 	function cleaning() {
 		first.value = "";
 		second.value = "";
@@ -37,31 +38,58 @@ function ControllerCalc() {
 			btnDecide = document.getElementById("button-decide"),
 			btnMultiply = document.getElementById("button-multiply"),
 			bin = document.getElementById("bin"),
+			radio = document.querySelectorAll("input[type='radio']"),
 			reset = document.getElementById("reset"),
 			length = buttons.length,
+			flag = false,
 			i;
 			
 		first = document.getElementById("first-value"),
 		out = document.getElementById("output-value"),
 		second = document.getElementById("second-value");
-		
+		//@event 
 		for(i = 0; i < length; i += 1) {
 		
 			(function (number) {
 				buttons[number].addEventListener("click", function () {
-					first.value += number;
+					if(!flag) {
+						first.value += number;
+					} else {
+						if(flag) {
+							second.value += number;
+						}
+					}
 				}, false);
 			})(i)
-			
 		}
-		//@event 
+		
+		first.addEventListener("focus", function () {
+			flag = false;
+		}, false);
+		
+		second.addEventListener("focus", function () {
+			flag = true;
+		}, false);
+		
 		reset.addEventListener("click", function () {
 			cleaning();
 		}, false);
 		
 		bin.addEventListener("click", function () {
-			calc.toBin(getValues().first);
-			result();
+			if(radio[0].checked) {
+				calc.toBin(getValues().first);
+				result();
+			} else { 
+				if(radio[1].checked) {
+					calc.toBin(getValues().second);
+					result();
+				} else {
+					if(radio[0].checked) {
+						calc.toBin(getValues().first);
+						result();
+					}
+				}
+			}
 		}, false);
 		
 		btnPlus.addEventListener("click",function () {

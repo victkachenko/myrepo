@@ -13,8 +13,8 @@ function Draggable() {
 	
 	this.move = function (event) {
 		if(draggable) {
-			draggable.style.left = event.pageX - 20 + "px"; 
-			draggable.style.top = event.pageY - 20 + "px";  // Style in controller © Cap
+			draggable.style.left = event.pageX - 10 + "px"; 
+			draggable.style.top = event.pageY - 10 + "px";  // Style in controller © Cap
 		}
 	};
 }
