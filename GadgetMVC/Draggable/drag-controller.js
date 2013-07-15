@@ -1,11 +1,13 @@
 function ControllerDrag() {
 	this.init = function () {
-		var clock = document.getElementById("gadget"),
+		var gadget = document.getElementById("gadget"),
+			clock = document.getElementById("clock");
 			drag = new Draggable();
-		
-		clock.onmousedown = drag.capture;
-		window.onmouseup = drag.release;
-		window.onmousemove = drag.move;
+			
+		gadget.addEventListener("mousedown", drag.capture, false);
+		window.addEventListener("mouseup", drag.release, false);
+		window.addEventListener("mousemove", drag.move, false);
 	};
+	
 	return this;
 }

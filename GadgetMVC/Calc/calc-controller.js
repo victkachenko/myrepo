@@ -36,26 +36,25 @@ function ControllerCalc() {
 		second = document.getElementById("second-value");
 		
 		//@event 
-		btnPlus.onclick = function () {
+		btnPlus.addEventListener("click",function () {
 			calc.add(getValues());
 			result();
-		};
+		}, false);
 		
-		btnMinus.onclick = function () {
+		btnMinus.addEventListener("click", function () {
 			calc.diff(getValues());
 			result();
-		};
+		}, false);
 		
-		btnDecide.onclick = function () {
+		btnDecide.addEventListener("click", function () {
 			calc.decide(getValues());
 			result();
-		};
+		}, false);
 		
-		btnMultiply.onclick = function () {
+		btnMultiply.addEventListener("click", function () {
 			calc.multiply(getValues());
 			result();
-		};
-		
+		}, false);
 	};
 	
 	return this;
