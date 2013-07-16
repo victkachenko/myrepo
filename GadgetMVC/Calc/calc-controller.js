@@ -40,6 +40,7 @@ function ControllerCalc() {
 			bin = document.getElementById("bin"),
 			radio = document.querySelectorAll("input[type='radio']"),
 			reset = document.getElementById("reset"),
+			back = document.getElementById("back"),
 			length = buttons.length,
 			flag = false,
 			i;
@@ -65,10 +66,14 @@ function ControllerCalc() {
 		
 		first.addEventListener("focus", function () {
 			flag = false;
+			first.style.border = "2px solid red";
+			second.style.border = "";
 		}, false);
 		
 		second.addEventListener("focus", function () {
 			flag = true;
+			second.style.border = "2px solid red";
+			first.style.border = "";
 		}, false);
 		
 		reset.addEventListener("click", function () {
@@ -84,10 +89,8 @@ function ControllerCalc() {
 					calc.toBin(getValues().second);
 					result();
 				} else {
-					if(radio[0].checked) {
 						calc.toBin(getValues().first);
 						result();
-					}
 				}
 			}
 		}, false);
