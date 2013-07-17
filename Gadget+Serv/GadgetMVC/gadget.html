@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8" />
+	<link rel = "stylesheet" href = "gadget.css">
+	<script src = "Timer/timer-model.js"></script>
+	<script src = "Calc/calc-model.js"></script>
+	<script src = "Draggable/drag-model.js"></script>
+	<script src = "Timer/timer-controller.js"></script>
+	<script src = "Calc/calc-controller.js"></script>
+	<script src = "Draggable/drag-controller.js"></script>
+	<script src = "run.js"></script>
+</head>
+<body>
+	<div id = "gadget">
+		<div id = "clock" class = "bord" ></div>
+		
+		<div id = "calc" class = "bord" >
+			<label for = "first-value">
+			<input type = "radio" name = "my" />Input first value:
+			</label>
+			<br />
+			<input type = "text" id = "first-value" /><br />
+			
+			<label for = "second-value">
+			<input type = "radio" name = "my" />Input second value: 
+			</label>
+			<br />
+			<input type = "text" id = "second-value" /><br />
+			
+			Output value: <br />
+			<input type = "text" disabled = "disabled" id = "output-value" /><br />
+			<button id = "btn0">0</button>
+			<button id = "btn1">1</button>
+			<button id = "btn2">2</button>
+			<button id = "btn3">3</button><br />
+			<button id = "btn4">4</button>
+			<button id = "btn5">5</button>
+			<button id = "btn6">6</button>
+			<button id = "btn7">7</button><br />
+			<input type = "button" id = "bin" value = "BIN" />
+			<button id = "btn8">8</button>
+			<button id = "btn9">9</button>
+			<input type = "button" id = "reset" value = "C" /><br />
+			<input type = "button" id = "back" value = "back" disabled/>
+			<input type = "button" id = "button-plus" value = "+" />
+			<input type = "button" id = "button-minus" value = "-" />
+			<input type = "button" id = "button-multiply" value = "*" />
+			<input type = "button" id = "button-decide" value = "/" />
+		</div>
+	</div>
+</body>
+</html>
