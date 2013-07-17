@@ -14,14 +14,14 @@ function ControllerCalc() {
 	function getValues() {
 		var parametrs = {};
 		
-			parametrs["first"] = parseFloat(first.value,10);
-			parametrs["second"] = parseFloat(second.value,10);
-			
+			parametrs["first"] = parseFloat(first.value, 10);
+			parametrs["second"] = parseFloat(second.value, 10);
+			parametrs.callback = result;
 		return parametrs;
 	}
 	//@private
-	function result() {
-		out.value = calc.getResult();
+	function result(responseText) {
+		out.value = responseText;
 	}
 	
 	function cleaning() {
@@ -49,7 +49,7 @@ function ControllerCalc() {
 		out = document.getElementById("output-value"),
 		second = document.getElementById("second-value");
 		//@event 
-		for(i = 0; i < length; i += 1) {
+		for(i = 0; i < length; i++) {
 		
 			(function (number) {
 				buttons[number].addEventListener("click", function () {
@@ -83,36 +83,29 @@ function ControllerCalc() {
 		bin.addEventListener("click", function () {
 			if(radio[0].checked) {
 				calc.toBin(getValues().first);
-				setTimeout(result, 200);
 			} else { 
 				if(radio[1].checked) {
 					calc.toBin(getValues().second);
-					setTimeout(result, 200);
 				} else {
 					calc.toBin(getValues().first);
-					setTimeout(result, 200);
 				}
 			}
 		}, false);
 		
-		btnPlus.addEventListener("click",function () {
+		btnPlus.addEventListener("click", function () {
 			calc.add(getValues());
-			setTimeout(result, 200);
 		}, false);
 		
 		btnMinus.addEventListener("click", function () {
 			calc.diff(getValues());
-			setTimeout(result, 200);
 		}, false);
 		
 		btnDecide.addEventListener("click", function () {
 			calc.decide(getValues());
-			setTimeout(result, 200);
 		}, false);
 		
 		btnMultiply.addEventListener("click", function () {
 			calc.multiply(getValues());
-			setTimeout(result, 200);
 		}, false);
 	};
 	

@@ -18,20 +18,18 @@ function Calculator() {
 		return xhr;
 	}
 	
-	function response() {
-		if(this.readyState === 4 && this.status === 200) {
-				output = this.responseText;
-			}
-	}
-	
 	function sender(source, params) {
 		var parametrs = "value1=" + params.first + "&value2=" + params.second,
 			ajax = getAjax();
 			
-		ajax.addEventListener("readystatechange", response, false);
+		ajax.addEventListener("readystatechange", function () {
+			if(this.readyState === 4 && this.status === 200) {
+				params.callback(this.responseText);
+			}
+		}, false);
+		
 		ajax.open("GET", source +"?"+ parametrs, true);
 		ajax.send();
-		delete ajax;
 	}
 	
 	this.add = function (params) {
