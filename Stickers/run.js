@@ -23,10 +23,9 @@ var Sticker = Backbone.Model.extend({
 			"click .subm": "submiting"
 		},
 		
-		submiting: function () {
-			var currentValue = this.$el.find(".txt").val();
-			this.model.set("userValue", currentValue);
-			console.log(this.model.get("userValue"));
+		submiting: function (event) {
+			this.model.set("userValue", this.$el.find(".txt").val());
+			this.$el.find(".output").html(this.model.get("userValue"));
 		},
 		
 		editSticker: function () {
