@@ -1,0 +1,47 @@
+td {
+	border:1px solid black;
+	width:25px;
+	height:25px;
+}
+
+button {
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	padding:3px;
+	margin-right:10%;
+	vertical-align: center;
+}
+table {
+	float: left;
+}
+#control {
+	float: right;
+}
+tr {
+	border:1px solid red;
+}
+
+.right {
+	background: red;
+}
+
+.left {
+	background: blue;
+}
+
+.center {
+	background: green;
+}
+
+.up {
+	background: yellow;
+}
+
+.down {
+	background: brown;
+}
+
+.centerVertical {
+	background: orange;
+}

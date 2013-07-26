@@ -1,0 +1,30 @@
+img {
+	width: 200px;
+	margin: 0 auto;
+	height: 200px;
+	border: 3px solid red;
+	top: 10px;
+	left: 10px;
+	position: absolute;
+}
+
+#second {
+	left: 220px;
+}
+
+#third { 
+	left: 440px;
+}
+
+#container { 
+	display:none;
+	top: 250px;
+	position: absolute;
+	text-align: center;
+	width: 75px;
+	height: 75px;
+	border-radius: 50px;
+	border: 2px solid red;
+	line-height: 65px;
+	left: 300px;
+}
