@@ -8,6 +8,14 @@ body {
 	background-image: url(backbone.jpg);
 }
 
+#trash {
+	border: 5px solid black;
+	background: green;
+	width: 200px;
+	height: 200px;
+	position: fixed;
+}
+
 button { 
 	background: radial-gradient(#00aaab, #d2ebf9 );
 	border-radius: 5px;
@@ -19,7 +27,6 @@ button {
 	background: #ddeeff;
 	height: 800px;
 	width: 800px;
-	position: relative;
 	margin: auto;
 	border: 3px solid red;
 	margin-top: 7%;

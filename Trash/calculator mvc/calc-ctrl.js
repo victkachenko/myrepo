@@ -14,8 +14,8 @@ function Controller() {
 	function getValues() {
 		var parametrs = {};
 		
-			parametrs["first"] = parseFloat(first.value,10);
-			parametrs["second"] = parseFloat(second.value,10);
+			parametrs["first"] = parseFloat(first.value, 10);
+			parametrs["second"] = parseFloat(second.value, 10);
 			
 		return parametrs;
 	}
