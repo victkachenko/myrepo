@@ -1,5 +1,5 @@
 var StickView = Backbone.View.extend({
-
+		
 		initialize: function () {
 			this.$el.draggable();
 			this.$el.css({
@@ -27,10 +27,7 @@ var StickView = Backbone.View.extend({
 				topToBottom = $("#stickerboard").outerHeight(true) + offset.top;
 				
 			if(ui.position.left < offset.left
-				|| ui.position.left > leftToRight
-				|| ui.position.top < offset.top
-				|| ui.position.top > topToBottom) {
-				
+				|| ui.position.left > leftToRight) {
 					this.deleteSticker();
 			}	
 		},
@@ -49,7 +46,7 @@ var StickView = Backbone.View.extend({
 		},
 		
 		deleteSticker: function () {
-			this.model.destroy();
+			console.log(this.model.destroy());
 			this.remove();
 			return false;
 		},

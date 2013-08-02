@@ -1,11 +1,15 @@
 var SticksCollectionView = Backbone.View.extend({
-	
+
 		initialize: function () {
 			this.collection = new SticksCollection();
 		},
-	
+		
 		events: {
-			"click": "addStick"
+			"click": "render"
+		},
+			
+		reset: function () {
+			this.collection
 		},
 		
 		getCoords: function (event) {
@@ -15,18 +19,19 @@ var SticksCollectionView = Backbone.View.extend({
 			}
 		},
 		
-		addStick: function (event) {
+		render: function (event) {
 			var newStick = new Stick(this.getCoords(event));
-			this.render(newStick);
+			this.addStick(newStick);
+			newStick.save();
 			this.collection.add(newStick);
 			return false;
 		},
 
-		render: function (model) {
+		addStick: function (model) {
 			var view = new StickView({
 				"model": model
 			});
-			
+						
 			this.$el.append(view.render().el);
 		}
 });

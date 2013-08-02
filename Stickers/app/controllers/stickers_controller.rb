@@ -1,5 +1,6 @@
 class StickersController < ApplicationController
   before_action :set_sticker, only: [:show, :edit, :update, :destroy]
+   skip_before_filter  :verify_authenticity_token
 
   # GET /stickers
   # GET /stickers.json
