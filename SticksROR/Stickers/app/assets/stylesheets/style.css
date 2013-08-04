@@ -1,0 +1,35 @@
+body {
+	background-image: url(backbone.jpg);
+}
+#stickerboard {
+	background: #ddeeff;
+	height: 800px;
+	width: 800px;
+	margin: auto;
+	position: relative;
+	border: 3px solid red;
+	margin-top: 7%;
+	background: radial-gradient(#55ddff, #0081b5);
+}
+.new-stick { 
+	height: 100px;
+	width: 111px;
+	border: 3px solid black;
+	background: #cceeff;
+	position: absolute;
+	text-align: center;
+	line-height: 40px;
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+.new-stick input { 
+	width: 50px;
+	text-align: center;
+}
+.delete { 
+	float: right;
+	background: yellow;
+}
+.submit {
+	float: left;
+	background: yellow;
+}

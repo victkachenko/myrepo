@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  coordsX: 1
+  coordsY: 1
+  userValue: MyString
+
+two:
+  coordsX: 1
+  coordsY: 1
+  userValue: MyString

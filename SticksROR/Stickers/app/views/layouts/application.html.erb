@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stickers</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <script id = "stick-template" type = "text/html">
+		<button class = "delete">X</button>
+		<button class = "submit">submit</button>
+		<textarea cols = "9" rows = "3" class = "txt" />
+		<div class = "output"></div>
+  </script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id = "stickerboard"></div>
+
+</body>
+</html>
