@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Items</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <script type = "text/html" id = "list-template">
+		<tr class = "appended">
+			<td>{{day}}/{{month}}/{{year}}</td>
+			<td class = "randomize">{{rand}}</td>
+			<td class = "deleteList">X</td>
+		</tr>
+  </script>
+  <script id = "stick-template" type = "text/html">
+		<button class = "delete">X</button>
+		<button class = "submit">submit</button>
+		<textarea cols = "9" rows = "3" class = "txt" />
+		<div class = "output"></div>
+  </script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<table id = "myboard">
+		<thead>
+			<tr>
+				<th>Date Rand Delete</th>
+				<th><button id = "add">Add</button></th>
+			</tr>
+		
+		</thead>
+	</table>
+	
+	<div id = "stickerboard">
+	
+	</div>
+</body>
+</html>

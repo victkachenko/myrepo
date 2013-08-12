@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @item.day %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @item.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @item.year %>
+</p>
+
+<p>
+  <strong>Rand:</strong>
+  <%= @item.rand %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
